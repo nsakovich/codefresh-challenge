@@ -15,10 +15,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      '../main/bower_components/ace-builds/src-min-noconflict/ace.js',
       '../main/bower_components/jquery/dist/jquery.min.js',
       '../main/bower_components/angular/angular.js',
       '../main/bower_components/ui-router/release/angular-ui-router.js',
       '../main/bower_components/ng-dialog/js/ngDialog.js',
+      '../main/bower_components/chance/dist/chance.min.js',
       '../main/bower_components/angular-toastr/dist/angular-toastr.tpls.js',
       '../main/bower_components/angular-permission/dist/angular-permission.js',
       '../main/bower_components/angular-permission/dist/angular-permission-ui.js',
@@ -27,8 +29,10 @@ module.exports = function(config) {
       '../main/bower_components/angular-translate-loader-url/angular-translate-loader-url.js',
       '../main/bower_components/angular-messages/angular-messages.min.js',
       '../main/bower_components/angular-mocks/angular-mocks.js',
-      '../main/bower_components/chance/dist/chance.min.js',
       '../main/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
+      '../main/bower_components/yamljs/bin/yaml.js',
+      '../main/bower_components/angular-ui-ace/ui-ace.js',
+      '../main/bower_components/angular-ui-validate/dist/validate.js',
       '../main/compiled/js/app.js',
       '../main/compiled/js/states.js',
       '../main/compiled/js/**/*.js',

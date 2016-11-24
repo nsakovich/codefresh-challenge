@@ -12,14 +12,6 @@ angular.module('codefresh-challenge').directive('stepSettings', () => {
     controller: 'StepSettingsController',
     link: ($scope) => {
       $scope.template = `/partials/workflow-editor/steps/${$scope.type}.html`;
-
-      $scope.validateUniqueName = (stepName, currentStep) => {
-        if (stepName) {
-          return $scope.steps.filter(step => step.name === stepName && currentStep !== step).length === 0;
-        } else {
-          return true;
-        }
-      };
     }
   };
 });

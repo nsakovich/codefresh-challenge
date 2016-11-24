@@ -21,8 +21,7 @@ describe('main controller', () => {
 
 	  $controller('MainConrtoller', {
       $scope: $scope,
-      $window: $window,
-      agencies: []
+      $window: $window
      });
 
     $scope.sayHello();

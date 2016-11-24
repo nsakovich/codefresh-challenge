@@ -431,7 +431,6 @@ module.exports = function(grunt) {
 
   var devTasks = function(extra) {
     var tasks = [
-      'checkDependencies',
       'symlink:bower',
       'symlink:images',
       'symlink:fonts',
@@ -472,7 +471,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'clean',
-    'checkDependencies',
     'copy:server',
     'symlink:bower',
     'symlink:images',

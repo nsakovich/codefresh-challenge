@@ -22,4 +22,12 @@ angular.module('codefresh-challenge').controller('StepSettingsController', ($sco
     $controller('FreestyleStepController', { $scope });
   }
 
+  $scope.validateUniqueName = (stepName, currentStep) => {
+    if (stepName) {
+      return $scope.steps.filter(step => step.name === stepName && currentStep !== step).length === 0;
+    } else {
+      return true;
+    }
+  };
+
 });
