@@ -60,6 +60,7 @@
     "karma-html2js-preprocessor": "^1.1.0",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.2",
+    "phantomjs": "^2.1.7",
     "protractor": "^4.0.9",
     "should": "^11.1.1",
     "sqlite3": "^3.1.6",
