@@ -1,0 +1,14 @@
+form(name = 'stepForm')
+  .form-group
+    label.required(for = 'name') Name
+    input(type = "text", required, ui-validate = "{unique: 'validateUniqueName($value, step)'}", name = 'name', ng-model = 'step.name')#name.form-control
+    div.error-label(ng-messages="stepForm.name.$error")
+      div(ng-message="unique") Step with this name is already exist
+      div(ng-message="required") Please specify step name
+
+  .form-group
+    label(for = 'description') Description
+    p A basic, free-text description of the step.
+    textarea(name = 'description', ng-model = 'step.description')#description.form-control
+
+  div(ng-include = "template")

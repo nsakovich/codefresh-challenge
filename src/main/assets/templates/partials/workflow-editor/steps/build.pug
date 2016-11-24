@@ -1,0 +1,31 @@
+.form-group
+  label(for = 'build-dockerfile') Dockerfile
+  p The path to the Dockerfile from which the image is built. The default is Dockerfile.
+  input(name = 'build-dockerfile', ng-model = 'step.dockerfile')#build-dockerfile.form-control
+
+.form-group
+  label(for = 'build-working_directory') Working directory
+  p The directory in which the build command is executed. It can be an explicit path in the container's file system, or a variable that references another step.
+  input(name = 'build-working_directory', ng-model = 'step.working_directory')#build-working_directory.form-control
+
+.form-group
+  label.required(for = 'build-image_name') Image name
+  p The name for the image you build.
+  input(name = 'build-image_name', required, ng-model = 'step.image_name')#build-image_name.form-control
+  div.error-label(ng-messages="stepForm['build-image_name'].$error")
+    div(ng-message="required") Please specify image name
+
+.form-group
+  label(for = 'build-tag') Tag
+  p The tag that is assigned to the image you build. The default is the name of the branch or revision that is built.
+  input(name = 'build-tag', ng-model = 'step.tag')#build-tag.form-control
+
+.form-group
+  div
+    label Build arguments
+  div.form-group(ng-repeat="arg in step.build_arguments track by $index")
+    div.input-group
+      div.input-group-btn
+        input.btn.btn-danger(type="button" ng-click="deleteBuildArgument($index)" value="Delete")
+      input.form-control(type="text" ng-model="step.build_arguments[$index]")
+  input.btn.btn-primary(type="button" ng-click="addBuildArgument()" value="Add Argument")

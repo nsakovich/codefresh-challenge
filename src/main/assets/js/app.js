@@ -10,7 +10,9 @@ var app = angular.module('codefresh-challenge', [
   'validation.match',
   'pascalprecht.translate',
   'ngMessages',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.ace',
+  'ui.validate'
 ]);
 
 app.config(($httpProvider, $translateProvider) => {

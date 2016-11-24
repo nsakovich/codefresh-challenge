@@ -1,0 +1,44 @@
+.form-group
+  label(for = 'push-provider') Provider
+  p The type of Docker registry provider. Can currently be either docker for a standard Docker registry, or ecr for the Amazon EC2 Container Registry (ECR).
+  select(ng-model='step.provider', name = 'build-provider', ng-options="provider.value as provider.name for provider in providers")#build-provider.form-control
+
+.form-group
+  label.required(for = 'push-candidate') Candidate
+  p The identifier of the image to push to the remote Docker registry. It can be an explicit identifier of an image to push, or a variable that references a Build step.
+  input(name = 'push-candidate', required, ng-model = 'step.candidate')#push-candidate.form-control
+
+.form-group
+  label(for = 'push-tag') Tag
+  p The tag under which to push the image. The default is the candidate's original tag.
+  input(name = 'push-tag', ng-model = 'step.tag')#push-tag.form-control
+
+div(ng-if = '!isEcr()')
+  .form-group
+    label(for = 'push-registry') Registry
+    p The host address where the registry is located. The default is the registry configured in your Codefresh account, or Dockerhub.
+    input(name = 'push-registry', ng-model = 'step.push')#push-registry.form-control
+
+  .form-group
+    label(for = 'push-username') Username
+    input(name = 'push-username', ng-model = 'step.credentials.username')#push-username.form-control
+
+  .form-group
+    label(for = 'push-password') Password
+    input(name = 'push-password', ng-model = 'step.credentials.password')#push-password.form-control
+
+div(ng-if = 'isEcr()')
+  .form-group
+    label(for = 'push-access-key') Access Key
+    p Your AWS access key.
+    input(name = 'push-access-key', ng-model = 'step.accessKeyId')#push-access-key.form-control
+
+  .form-group
+    label(for = 'push-secret') Access Secret
+    p Your AWS secret key.
+    input(name = 'push-secret', ng-model = 'step.secretAccessKey')#push-secret.form-control
+
+  .form-group
+    label(for = 'push-region') Region
+    p The region where the ECR registry is accessible.
+    input(name = 'push-region', ng-model = 'step.region')#push-region.form-control

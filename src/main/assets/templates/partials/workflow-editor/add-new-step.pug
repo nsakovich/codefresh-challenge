@@ -1,0 +1,6 @@
+div.btn-group.workflow-editor__add-btn(uib-dropdown)
+  button.btn.btn-primary(type="button", uib-dropdown-toggle, ng-disabled = '!canAddNewStep()') Add new step
+    span.caret
+  ul.dropdown-menu(uib-dropdown-menu)
+    li(ng-repeat = "step in vm.availableSteps | orderBy: 'order'").workflow-editor__new-step
+      a(ng-click = 'addStep(step)', ng-bind = '::step.label')

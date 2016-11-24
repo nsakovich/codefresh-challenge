@@ -1,0 +1,24 @@
+.form-group
+  label(for = 'clone-working_directory') Working directory
+  p The directory to which the repository is cloned. It can be an explicit path in the container's file system, or a variable that references another step.
+  input(name = 'clone-working_directory', ng-model = 'step.working_directory')#clone-working_directory.form-control
+
+.form-group
+  label.required(for = 'clone-repo') Repo
+  p URL of the Git repository you are cloning.
+  input(name = 'clone-repo', required, ng-model = 'step.repo')#clone-repo.form-control
+  div.error-label(ng-messages="stepForm['clone-repo'].$error")
+    div(ng-message="required") Please specify repo URL
+
+.form-group
+  label(for = 'clone-username') Username
+  input(name = 'clone-username', ng-model = 'step.credentials.username')#clone-username.form-control
+
+.form-group
+  label(for = 'clone-password') Password
+  input(name = 'clone-password', ng-model = 'step.credentials.password')#clone-password.form-control
+
+.form-group
+  label(for = 'clone-revision') Revision
+  p The revision of the repository you are checking out. It can be a revision has or a branch name. The default value is master.
+  input(name = 'clone-revision', ng-model = 'step.revision')#clone-revision.form-control

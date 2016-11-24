@@ -1,0 +1,29 @@
+.workflow-editor
+  &__add-btn
+    .caret
+      margin-left: 10px
+  &__new-step
+    cursor: pointer
+  &__steps-list
+    margin-top: 20px
+  &__steps-container
+    clear: both
+
+label.required::after
+  content: '*'
+  color: #f00
+
+.yaml-config
+  position: fixed
+  left: 0
+  top: 0
+  width: 50%
+  bottom: 0
+  &__editor
+    height: 100%
+
+.steps-container
+  padding-top: 10px
+
+.error-label
+  color: red

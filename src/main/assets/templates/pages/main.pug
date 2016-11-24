@@ -1,2 +1,6 @@
 .container
-  h1(translate = 'i18n.title')
+  div.yaml-config
+    div.yaml-config__editor(ui-ace='yamlSettings', ng-model = 'yamlConfig', ng-readonly = 'true')
+  .row
+    .col-xs-6
+    .steps-container.col-xs-6(ng-include = "'/partials/left-column.html'")

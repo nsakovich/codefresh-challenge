@@ -25,6 +25,8 @@ html(ng-app='codefresh-challenge')
     div(ui-view)
 
     // build:js /js/vendors.js
+    script(type="text/javascript" src="/bower_components/ace-builds/src-min-noconflict/ace.js")
+
     script(type='text/javascript', src='/bower_components/jquery/dist/jquery.min.js')
     script(type='text/javascript', src='/bower_components/angular/angular.js')
     script(type='text/javascript', src='/bower_components/ui-router/release/angular-ui-router.js')
@@ -37,6 +39,10 @@ html(ng-app='codefresh-challenge')
     script(type='text/javascript', src='/bower_components/angular-translate-loader-url/angular-translate-loader-url.js')
     script(type='text/javascript', src='/bower_components/angular-messages/angular-messages.min.js')
     script(type='text/javascript', src='/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
+    script(type='text/javascript', src='/bower_components/yamljs/bin/yaml.js')
+
+    script(type="text/javascript" src="/bower_components/angular-ui-ace/ui-ace.js")
+    script(type="text/javascript" src="/bower_components/angular-ui-validate/dist/validate.js")
 
     // endbuild
 
@@ -44,6 +50,14 @@ html(ng-app='codefresh-challenge')
     script(type='text/javascript', src='/js/app.js')
     script(type='text/javascript', src='/js/states.js')
     script(type='text/javascript', src='/js/run.js')
+    script(type='text/javascript', src='/js/workflow-editor/workflow-editor-directive.js')
+    script(type='text/javascript', src='/js/workflow-editor/step-settings-directive.js')
+    script(type='text/javascript', src='/js/workflow-editor/step-settings-controller.js')
+    script(type='text/javascript', src='/js/workflow-editor/steps-yaml-filter.js')
+    script(type='text/javascript', src='/js/workflow-editor/steps/push-step-controller.js')
+    script(type='text/javascript', src='/js/workflow-editor/steps/build-step-controller.js')
+    script(type='text/javascript', src='/js/workflow-editor/steps/git-clone-step-controller.js')
+    script(type='text/javascript', src='/js/workflow-editor/steps/freestyle-step-controller.js')
     // endbuild
 
     // build:js /js/templates.js

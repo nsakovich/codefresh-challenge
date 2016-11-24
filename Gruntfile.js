@@ -303,13 +303,6 @@ module.exports = function(grunt) {
           livereload: false
         }
       },
-      karma: {
-        files: ['src/main/compiled/js/**/*.js'],
-        tasks: ['karma:unit:run'],
-        options: {
-          livereload: false
-        }
-      },
       tests: {
         files: ['src/test/js/unit/**/*.js'],
         tasks: ['jshint:tests'],

@@ -1,0 +1,10 @@
+div.workflow-editor__steps-container
+  div.workflow-editor__steps-list(uib-accordion)
+    div(ng-repeat = "step in vm.addedSteps | orderBy: 'parent.order'").panel-default(uib-accordion-group, is-open = 'true')
+      div(uib-accordion-heading)
+        span {{::step.parent.label}}
+        button.btn.btn-xs.pull-right.btn-danger(type="button", ng-click = 'removeStep(step)') Remove
+
+      div(step-settings, type = 'step.parent.type', step = 'step', steps = 'steps')
+
+  div(ng-if = '!hasSteps()').alert.alert-info Please add a new step ...

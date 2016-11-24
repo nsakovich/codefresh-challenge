@@ -1,0 +1,31 @@
+.form-group
+  label.required(for = 'freestyle-image_name') Image name
+  p The image from which the executable container is created. It can be an explicit ID of a Docker image, or a variable that references a Build or Push step.
+  input(name = 'freestyle-image_name', required, ng-model = 'step.image')#freestyle-image_name.form-control
+  div.error-label(ng-messages="stepForm['freestyle-image_name'].$error")
+    div(ng-message="required") Please specify image name
+
+.form-group
+  label(for = 'freestyle-working_directory') Working directory
+  p The directory from which the commands are executed. It can be an explicit path in the container's file system, or a variable that references another step. The default working_directory is the working directory specified by the image.
+  input(name = 'freestyle-working_directory', ng-model = 'step.working_directory')#freestyle-working_directory.form-control
+
+.form-group
+  div
+    label Commands
+  div.form-group(ng-repeat="arg in step.commands track by $index")
+    div.input-group
+      div.input-group-btn
+        input.btn.btn-danger(type="button" ng-click="deleteCommand($index)" value="Delete")
+      input.form-control(type="text" ng-model="step.commands[$index]")
+  input.btn.btn-primary(type="button" ng-click="addCommand()" value="Add Command")
+
+.form-group
+  div
+    label Environment variables
+  div.form-group(ng-repeat="arg in step.environment track by $index")
+    div.input-group
+      div.input-group-btn
+        input.btn.btn-danger(type="button" ng-click="deleteVariable($index)" value="Delete")
+      input.form-control(type="text" ng-model="step.environment[$index]")
+  input.btn.btn-primary(type="button" ng-click="addVariable()" value="Add Variable")
