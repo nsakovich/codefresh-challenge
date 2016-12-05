@@ -1,5 +1,7 @@
 # Codefresh Challenge
 
+New branch test ...
+
 IMPORTANT! If you are Windows user run all commands in terminal as administrator
 
 1. Run ```npm install```
