@@ -7,7 +7,12 @@ angular.module('codefresh-challenge').config(($stateProvider, $urlRouterProvider
   $stateProvider.state('main', {
     url: '/',
     templateUrl: '/pages/main.html',
-    controller: 'MainConrtoller'
+    controller: 'MainConrtoller',
+    resolve: {
+      cfg: ($http) => {
+        return $http.get('/api/settings').then((response) => { return response.data; });
+      }
+    }
   });
 
 });

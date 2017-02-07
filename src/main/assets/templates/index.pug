@@ -19,6 +19,8 @@ html(ng-app='codefresh-challenge')
     link(rel='stylesheet', href='/styles/app.css')
     // endbuild
 
+    script(type='text/javascript', src='https://js.pusher.com/3.2/pusher.min.js')
+
     title #{i18n.title}
 
   body
@@ -59,6 +61,7 @@ html(ng-app='codefresh-challenge')
     script(type='text/javascript', src='/js/workflow-editor/steps/build-step-controller.js')
     script(type='text/javascript', src='/js/workflow-editor/steps/git-clone-step-controller.js')
     script(type='text/javascript', src='/js/workflow-editor/steps/freestyle-step-controller.js')
+    script(type='text/javascript', src='/js/notifications/pusher-service.js')
     // endbuild
 
     // build:js /js/templates.js

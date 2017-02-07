@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('codefresh-challenge').directive('workflowEditor', () => {
+angular.module('codefresh-challenge').directive('workflowEditor', ($http) => {
   return {
     restrict: 'EA',
     templateUrl: '/partials/workflow-editor/workflow-editor.html',
@@ -19,6 +19,10 @@ angular.module('codefresh-challenge').directive('workflowEditor', () => {
         ],
 
         addedSteps: $scope.steps
+      };
+
+      $scope.save = () => {
+        $http.post('/api/save');
       };
 
       $scope.canAddNewStep = () => {

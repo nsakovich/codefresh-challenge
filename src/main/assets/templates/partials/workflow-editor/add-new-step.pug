@@ -4,3 +4,4 @@ div.btn-group.workflow-editor__add-btn(uib-dropdown)
   ul.dropdown-menu(uib-dropdown-menu)
     li(ng-repeat = "step in vm.availableSteps | orderBy: 'order'").workflow-editor__new-step
       a(ng-click = 'addStep(step)', ng-bind = '::step.label')
+button.btn.btn-success(type="button", ng-click = "save()") Save
